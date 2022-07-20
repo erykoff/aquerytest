@@ -1,5 +1,6 @@
 import aquerytest
 import pytest
+import time
 
 
 def test_aquerytest():
@@ -10,3 +11,8 @@ def test_aquerytest():
 
     with pytest.raises(RuntimeError):
         _ = tester.run_fail()
+
+    time.sleep(600)
+
+    table = tester.run()
+    print(table)
