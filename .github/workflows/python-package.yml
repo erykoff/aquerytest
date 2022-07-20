@@ -34,7 +34,7 @@ jobs:
     - name: Install dependencies
       run: |
         export PATH="$CONDA/bin:$PATH"
-        conda create -q -n testenv python=${{ matrix.python-version }} numpy astroquery -c conda-forge
+        conda create -q -n testenv python=${{ matrix.python-version }} numpy astroquery pytest flake8 pytest-flake8 -c conda-forge
         source activate testenv
         pip install --no-deps .
     - name: Test with pytest
